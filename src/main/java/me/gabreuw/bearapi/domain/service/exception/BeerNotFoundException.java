@@ -11,4 +11,8 @@ public class BeerNotFoundException extends RuntimeException {
         super("Beer not found by ID " + id);
     }
 
+    public BeerNotFoundException(String name) {
+        super("Beer not found by name " + name);
+    }
+
 }

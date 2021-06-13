@@ -20,7 +20,7 @@ public class BeerService {
     private final BeerMapper MAPPER = BeerMapper.INSTANCE;
 
     public BeerDTO createBear(BeerDTO beerDTO) {
-        verifyIfExists(beerDTO.getId());
+        verifyIfIsAlreadyRegistered(beerDTO.getName());
 
         var savedBeer = REPOSITORY.save(
                 MAPPER.toEntity(beerDTO)
@@ -32,7 +32,7 @@ public class BeerService {
     public BeerDTO findByName(String name) {
         var recoveredBeer = REPOSITORY.
                 findByName(name)
-                .orElseThrow();
+                .orElseThrow(() -> new BeerNotFoundException(name));
 
         return MAPPER.toDTO(recoveredBeer);
     }
