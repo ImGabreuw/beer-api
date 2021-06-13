@@ -31,4 +31,5 @@ public class Beer {
     @Enumerated(STRING)
     @Column(nullable = false)
     private BeerType type;
+
 }
