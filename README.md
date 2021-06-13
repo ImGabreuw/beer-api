@@ -3,20 +3,15 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/ImGabreuw/beer-api?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/ImGabreuw/beer-api?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/ImGabreuw/beer-api?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/ImGabreuw/beer-api?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/ImGabreuw/beer-api?style=for-the-badge)
 
 <img height="200px" width="300px" src="https://hermes.dio.me/santander/dev-week/logo-dio.svg">
 
 > REST API for managing beer stocks.
 
-### Concept Model
-
-![](./.github/modelo-conceitual.png)
-
 ### 📝 TODO
 
 - [ ] API documentation with Swagger
+- [ ] Deploy in Heroku
 
 ## 💻 Prerequisites
 
@@ -31,11 +26,12 @@
   * Validation
   * Web
   * DevTools
-  * pActuator
+  * Actuator
 * MapStruct
 * H2
 * Lombok
-
+* JUnit / Mockito / Hamcrest
+* Swagger 2
 
 ## 🚀 Installation
 
@@ -91,4 +87,3 @@ Want to be part of this project? Click [HERE](CONTRIBUTING.md) and read how to c
 This project is under license. See the archive [LICENSE](LICENSE.md) for more details.
 
 [⬆ Back to the top](#beer-api)<br>
-
