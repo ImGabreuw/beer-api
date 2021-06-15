@@ -17,7 +17,7 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RestController
 @RequestMapping(path = "/api/v1/beers")
-public class BeerResource {
+public class BeerResource implements BeerResourceDocs {
 
     private final BeerService SERVICE;
 
