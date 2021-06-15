@@ -7,6 +7,7 @@ import me.gabreuw.bearapi.domain.model.Beer;
 import me.gabreuw.bearapi.domain.repository.BeerRepository;
 import me.gabreuw.bearapi.domain.service.exception.BeerAlreadyRegisteredException;
 import me.gabreuw.bearapi.domain.service.exception.BeerNotFoundException;
+import me.gabreuw.bearapi.domain.service.exception.BeerStockExceededException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,4 +60,16 @@ public class BeerService {
                 .orElseThrow(() -> new BeerNotFoundException(id));
     }
 
+    public BeerDTO increment(Long id, int quantityToIncrement) {
+        var beerToIncrementStock = verifyIfExists(id);
+        var quantityAfterIncrement = quantityToIncrement + beerToIncrementStock.getQuantity();
+
+        if (quantityAfterIncrement <= beerToIncrementStock.getMax()) {
+            beerToIncrementStock.setQuantity(beerToIncrementStock.getQuantity() + quantityToIncrement);
+            Beer incrementedBeerStock = REPOSITORY.save(beerToIncrementStock);
+
+            return MAPPER.toDTO(incrementedBeerStock);
+        }
+        throw new BeerStockExceededException(id, quantityToIncrement);
+    }
 }
