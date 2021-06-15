@@ -1,3 +1,15 @@
+application:
+  api:
+    base-package: me.gabreuw.bearapi.api.resource
+    title: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+  contact:
+    name: ImGabreuw
+    github: https://github.com/ImGabreuw
+    email: imgabreuw.dev@gmail.com
+
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
