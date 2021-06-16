@@ -11,7 +11,7 @@
 ### 📝 TODO
 
 - [X] API documentation with Swagger
-- [ ] Deploy in Heroku
+- [X] Deploy in Heroku
 
 ## 💻 Prerequisites
 
