@@ -46,7 +46,7 @@ $ cd beer-api/
 $ mvn spring-boot:run
 ```
 
-Go to http://localhost:8080/api/v1/beer
+Go to http://localhost:8080/api/v1/beers
 
 ## 📫 Contribution
 
